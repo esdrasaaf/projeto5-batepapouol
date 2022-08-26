@@ -3,6 +3,13 @@
 body {
     font-family: 'Roboto', sans-serif;
 }
+.esconder{
+    display: none;
+}
+
+.aparecer {
+    display: initial;
+}
 
 .main-content {
     display: flex;
@@ -42,12 +49,82 @@ header ion-icon, img{
     cursor: pointer;
 }
 
+.background-sidebar {
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.6);
+    height: 667px;
+    width: 375px;
+    position: absolute;
+}
+
+.sidebar {
+    background-color: #ffffff;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 667px;
+    width: 260px;
+    z-index: 2;
+}
+
+.participantes {
+    height: 170px;
+    overflow-y: scroll;
+}
+
+.participantes::-webkit-scrollbar {
+    width: 0;
+}
+
+.titulo1 {
+    display: flex;
+    align-items: center;
+    height: 84px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    box-sizing: border-box;
+    padding-left: 45px;
+    padding-right: 45px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.titulo2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 66px;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.publico, .reservado, .usuarios {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 36px;
+    box-sizing: border-box;
+    padding-left: 20px;
+    margin-bottom: 2px;
+}
+
+.spansb, .usuario{
+    margin-left: 10px;
+}
+
+.check {
+    position: absolute;
+    color: rgb(30, 199, 30);
+    right: 20px;
+}
+
 .bate-papo {
     margin-top: 80px;
     padding-top: 13px;
-    width: 100%;
+    width: 373px;
     height: 507px;
-    overflow: scroll
+    overflow: scroll;
 }
 
 .bate-papo::-webkit-scrollbar {
@@ -56,6 +133,9 @@ header ion-icon, img{
  
 .message {
     background-color: #ffffff;
+    overflow: hidden;
+    width: 373px;
+    flex-wrap: wrap;
     box-sizing: border-box;
     font-size: 14px;
     font-weight: 400;
@@ -69,6 +149,9 @@ header ion-icon, img{
 }
 
 .private_message {
+    overflow: hidden;
+    width: 373px;
+    flex-wrap: wrap;
     background-color: #ffdede;
     box-sizing: border-box;
     font-size: 14px;
@@ -83,6 +166,9 @@ header ion-icon, img{
 }
 
 .status {
+    overflow: hidden;
+    width: 373px;
+    flex-wrap: wrap;
     background-color: #dcdcdc;
     box-sizing: border-box;
     font-size: 14px;
@@ -109,7 +195,7 @@ header ion-icon, img{
     font-weight: 700;
 }
 
-form {
+footer {
     box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
     position: absolute;
     bottom: 0;
@@ -135,11 +221,8 @@ footer input {
     color: black;
 }
 
-footer button {
+footer ion-icon {
     cursor: pointer;
-    border-style: none;
     font-size: 30px;
-    background-color: #ffffff;
     box-sizing: border-box;
-    padding-top: 7px;
 }

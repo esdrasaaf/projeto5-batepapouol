@@ -8,25 +8,63 @@
     <link rel="stylesheet" href="./css/style.css">
     <title>Bata-Papo UOL</title>
 </head>
+
 <body>
     <div class="main-content">
-       
         <div class="content">
             <header>
                 <img src="./images/logo 1.png" alt="Logo do Bate-Papo UOL">
-                <ion-icon name="people-sharp"></ion-icon>
+                <ion-icon name="people-sharp" onclick="aparecer()"></ion-icon>
             </header>
+
+            <div class="background-sidebar esconder" onclick="sumir(this)">
+                <div class="sidebar">
+                    <div class="titulo1">
+                        <h1>Escolha um contato para enviar mensagem:</h1>
+                    </div>
+                    
+                    <div class="participantes">
+                        <div class="usuarios" data-identifier="participant">
+                            <ion-icon name="people-sharp"></ion-icon>
+                            <span class="usuario">Todos</span>
+
+                            <div class="check">
+                                <ion-icon name="checkmark-sharp"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="titulo2">
+                        <h1>Escolha a visibilidade:</h1>
+                    </div>
+
+                    <div class="visibilidade">
+                        <div class="publico" data-identifier="visibility">
+                            <ion-icon name="lock-open"></ion-icon>
+                            <span class="spansb">Público</span>
+
+                            <div class="check">
+                                <ion-icon name="checkmark-sharp"></ion-icon>
+                            </div>
+                        </div>
+
+                        <div class="reservado" data-identifier="visibility">
+                            <ion-icon name="lock-closed"></ion-icon>
+                            <span class="spansb">Reservadamente</span>
+
+                            <div class="check">
+                                <ion-icon name="checkmark-sharp"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <div class="bate-papo"></div>
 
             <footer>
-                <form action="">
-                    <input type="text" class="chat" name="chat" id="chat" autocomplete="off" placeholder="Escreva aqui..." required>
-                    
-                    <button type="submit" id="send" onclick="adicionarMensagem()">
-                        <ion-icon name="paper-plane-outline"></ion-icon>
-                    </button>
-                </form>
+                <input type="text" class="chat" name="chat" disable id="chat" autocomplete="off" placeholder="Escreva aqui..." required>
+                <ion-icon id="send" name="paper-plane-outline" onclick="adicionarMensagem('.chat')"></ion-icon>
             </footer>
         </div>
 
