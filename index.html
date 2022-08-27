@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
-    <title>Bata-Papo UOL</title>
+    <link rel="shortcut icon" href="./images/logo-uol-icon-512.png" type="image/x-icon">
+    <title>Bate-Papo UOL</title>
 </head>
 
 <body>
@@ -17,14 +18,27 @@
                 <ion-icon name="people-sharp" onclick="aparecer()"></ion-icon>
             </header>
 
-            <div class="background-sidebar esconder" onclick="sumir(this)">
+            <div class="back-tela-entrar">
+                <div class="tela-entrada">
+                    <img class="logo2" src="./images/logo 2.png" alt="Logo do bate-papo UOL">
+                    <input class="nome" type="text" placeholder="Digite seu nome">
+                    <input class="entrar" type="submit" value="Entrar" onclick="sumirTela(this)">
+                    <img class="gif esconder" src="./images/1488.gif" alt="Gif de carregamento">
+                    <h1 class="esconder">Entrando...</h1>
+                </div>
+            </div>
+            
+
+            <div class="parte-preta esconder"></div>
+
+            <div class="background-sidebar esconder ">
                 <div class="sidebar">
                     <div class="titulo1">
                         <h1>Escolha um contato para enviar mensagem:</h1>
                     </div>
                     
                     <div class="participantes">
-                        <div class="usuarios" data-identifier="participant">
+                        <div class="usuarios selecionado" onclick="escolherUsuariosTodos(this)" data-identifier="participant">
                             <ion-icon name="people-sharp"></ion-icon>
                             <span class="usuario">Todos</span>
 
@@ -39,7 +53,7 @@
                     </div>
 
                     <div class="visibilidade">
-                        <div class="publico" data-identifier="visibility">
+                        <div class="opcaoV selecionado" onclick="escolherVisibilidade(this)" data-identifier="visibility">
                             <ion-icon name="lock-open"></ion-icon>
                             <span class="spansb">Público</span>
 
@@ -48,7 +62,7 @@
                             </div>
                         </div>
 
-                        <div class="reservado" data-identifier="visibility">
+                        <div class="opcaoV" onclick="escolherVisibilidade(this)" data-identifier="visibility">
                             <ion-icon name="lock-closed"></ion-icon>
                             <span class="spansb">Reservadamente</span>
 
@@ -63,8 +77,12 @@
             <div class="bate-papo"></div>
 
             <footer>
-                <input type="text" class="chat" name="chat" disable id="chat" autocomplete="off" placeholder="Escreva aqui..." required>
-                <ion-icon id="send" name="paper-plane-outline" onclick="adicionarMensagem('.chat')"></ion-icon>
+                <div class="caixa-texto">
+                    <input type="text" class="chat" name="chat" disable id="chat" autocomplete="off" placeholder="Escreva aqui..." required>
+                    <p class="enviando aparecer">Enviando mensagem para Todos (Público)</p>
+                </div>
+                
+                <ion-icon id="send" name="paper-plane-outline" onclick="adicionarMensagem()"></ion-icon>
             </footer>
         </div>
 
